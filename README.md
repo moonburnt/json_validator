@@ -1,4 +1,4 @@
-# Yet another bicycle to verify if your json files are valid. 
+# Yet another bicycle to verify if your json files are valid
 *Made for personal use in about a hour, but maybe you will find it usefull too.*
 
 ## Usage:
