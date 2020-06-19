@@ -8,11 +8,14 @@ import json
 def json_validator(item):
     '''Function that verifies if json is valid (can be used) or not. Expects one argument (name of json file or path+name), returns True if json is valid or False and prints error if its not, ignores other errors (if passed file is directory, doesnt exist or so on)'''
     try:
-        json.loads(open(item).read())
+        f = open(item)
+        json.loads(f.read())
         print("{} is valid json".format(item))
+        f.close()
         return True
     except ValueError as error:
         print("{} contain errors:\n- {}".format(item, error))
+        f.close()
         return False
     except:
         pass
@@ -58,6 +61,6 @@ if __name__ == "__main__":
             ignored.append(item)
 
     print("{}\n{} has finished its work with {} errors\n{}".format(delimeter, sys.argv[0], len(invalid)+len(ignored), delimeter))
-    print_stats(valid, "\nValid jsons:")
-    print_stats(invalid, "\nInvalid jsons:")
-    print_stats(ignored, "\nIgnored:")
+    print_stats(valid, "Valid jsons:")
+    print_stats(invalid, "Invalid jsons:")
+    print_stats(ignored, "Ignored:")
