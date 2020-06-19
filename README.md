@@ -3,7 +3,7 @@
 
 ## Usage:
 
-./json-validator.py <files you want to verify, split by ' ' (masks supported)>
+`./json-validator.py <files you want to verify, split by ' ' (masks supported)>`
 
 ## License:
 
